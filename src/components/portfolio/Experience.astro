@@ -5,18 +5,88 @@ import { Icon } from "astro-icon/components";
 
 const EXPERIENCE = [
   {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+    date: "13/10/2025 8:00 AM - 13:00 PM",
+    title: "SESION 1",
+    company: "Fundamentos de Automatización y PLC",
+    listaTemas: {
+      "uno" : {
+        titulo : "1. Introducción a la automatización industrial",
+        subtemas: [
+          "1.1. Conceptos básicos (Industria 4.0, loT en procesos industriales)",
+          "1.2. Instrumentación y control, generalidades",
+          "1.3. Introducción a los sistemas de control automático",
+          "1.4. Aplicaciones industriales"
+        ]
+      },
+      "dos" : {
+        titulo : "2. Controlador lógico programable (PLC)",
+        subtemas: [
+          "2.1. Arquitectura de un PLC",
+          "2.2. Hardware y componentes de los PLC",
+          "2.3. Software TIA Portal (entorno y configuración básicа)",
+          "2.4. Lenguajes de programación",
+          "2.5. Ejercicios prácticos"
+        ]
+      }
+    }
   },
   {
-    date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+    date: "13/10/2025 15:00 PM - 19:00 PM",
+    title: "SESION 2",
+    company: "Programación básica de PLC",
+    listaTemas: {
+      "uno" : {
+        titulo : "3. Programación Ladder",
+        subtemas: [
+          "3.1. Funciones lógicas. Comparadores.",
+          "3.2. Temporizadores",
+          "3.3. Contadores",
+          "3.4. Manejo de entradas y salidas analógicas",
+          "3.5. Ejercicios prácticos"
+        ],
+      },
+      "dos" : {}
+    }
+  },
+  {
+    date: "13/10/2025 8:00 AM - 13:00 PM",
+    title: "SESION 3",
+    company: "Programación de módulos de entrenamiento PLC",
+    listaTemas: {
+      "uno" : {
+        titulo : "4. Programas de aplicación práctica",
+        subtemas: [
+          "4.1. Control de flujo de proceso.",
+          "4.2. Medición y control de presión",
+          "4.3. Control de señal de semáforo",
+          "4.4. Control de lavadora",
+          "4.5. Medición y control de nivel de liquido",
+          "4.6. Medición y control de temperatura",
+          "4.7. Control de nivel de proceso"
+        ]
+      },
+      "dos" : {}
+    }
+  },
+  {
+    date: "13/10/2025 15:00 PM - 19:00 PM",
+    title: "SESION 4",
+    company: "Diseño de circuitos impresos (PCB)",
+    listaTemas: {
+      "uno" : {
+        titulo : "5. Diseño de PCB con KiCAD",
+        subtemas: [
+          "5.1. Entorno KiCAD.",
+          "5.2. Herramientas de diseño de esquemático electrónico",
+          "5.3. Herramientas de diseño de tarjeta electrónica",
+          "5.4. Diseño de símbolos y huellas nuevas",
+          "5.5. Diseño de presentación 3D",
+          "5.6. Manejo de archivos para fabricación",
+          "Ejercicio práctico: Fabricación de PCB para robot Minisumo"
+        ]
+      },
+      "dos" : {}
+    }
   },
 ];
 ---
@@ -25,7 +95,7 @@ const EXPERIENCE = [
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
     <div class="flex gap-4 items-center justify-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
-      <Heading text="Work" textGradient="Experience" level={2} />
+      <Heading text="Cronograma de" textGradient="Actividades" level={2} />
     </div>
 
     <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
