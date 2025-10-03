@@ -24,6 +24,11 @@ const navItems = [
     ],
     inactive: ["dark:text-zinc-300", "text-blacktext"],
   };
+
+  function cerrarNav(){
+    document.getElementsByClassName("nav")[0].classList.add("closeNav");
+  }
+
   function toggleLinkClasses(link: Element, isActive: boolean) {
     if (isActive) {
       link.classList.add(...linkClasses.active);
@@ -35,9 +40,14 @@ const navItems = [
       link.removeAttribute("aria-current");
     }
   }
+
+  const boton = document.getElementById("btnCerrar");
+  boton?.addEventListener("click",cerrarNav)
+
 </script>
 
 <nav class="nav">
+  <p id="btnCerrar" class="nav__icon"><i class="fa-solid fa-x"></i></p>
   <div
     class="hidden md:flex space-x-4 contenedor animate__animated animate__bounce"
   >

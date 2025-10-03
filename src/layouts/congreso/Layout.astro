@@ -1,5 +1,6 @@
 ---
 import {Navbar} from "congreso:componentes"
+import "congreso:styles/global.css"
 const {
     pageTile = "CONGRESO UNAMAD",
     ogimage = {
@@ -49,8 +50,8 @@ const SEO = {
     />
 </head>
 <body class="overflow-x-hidden">
-    <Navbar/>
-    <div>
+    <div id="main" >
+        <Navbar/>
         <slot />
     </div>
 </body>
