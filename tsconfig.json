@@ -9,6 +9,13 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "baseUrl": ".",
+    "paths": {
+      "congreso:componentes":["src/components/congreso/index.ts"],
+      "congreso:layouts":["src/layouts/congreso/index.ts"],
+      "congreso:styles/*":["src/styles/congreso/*"]
+    }
+
   }
 }
