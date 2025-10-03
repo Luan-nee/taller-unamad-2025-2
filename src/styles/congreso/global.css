@@ -20,3 +20,9 @@ body{
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 640px){
+  #main{
+    flex-direction: column;
+    width: 95%; 
+  } 
+}

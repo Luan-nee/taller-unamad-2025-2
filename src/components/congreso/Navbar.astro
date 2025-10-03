@@ -2,6 +2,12 @@
 import "congreso:styles/navbar.css";
 import "animate.css";
 
+interface Props{
+  titulo:string
+}
+
+const {titulo = "UNAMAD"} = Astro.props;
+
 const navItems = [
   {
     href: "/congreso",
@@ -64,3 +70,7 @@ const navItems = [
     }
   </div>
 </nav>
+<nav class="navSecundario" >
+  <p>{titulo}</p>
+  <p id="openModal" ><i class="fa-brands fa-slack"></i></p>
+</nav>  
