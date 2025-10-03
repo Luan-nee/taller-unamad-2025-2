@@ -32,7 +32,14 @@ const navItems = [
   };
 
   function cerrarNav(){
-    document.getElementsByClassName("nav")[0].classList.add("closeNav");
+    const caja = document.getElementsByClassName("nav")[0];
+    caja.classList.add("animate__bounceOut");
+    setTimeout(() => {
+      caja.classList.remove("openNav");
+      caja.classList.add("closeNav");
+      caja.classList.remove("animate__bounceOut");
+      document.body.style.overflow = "";
+    }, 2000);
   }
 
   function toggleLinkClasses(link: Element, isActive: boolean) {
@@ -48,11 +55,17 @@ const navItems = [
   }
 
   const boton = document.getElementById("btnCerrar");
-  boton?.addEventListener("click",cerrarNav)
+  const botonOpen = document.getElementById("openModal");
 
+  boton?.addEventListener("click",cerrarNav)
+  botonOpen?.addEventListener("click",()=>{
+      document.body.style.overflow = "hidden";
+      document.getElementsByClassName("nav")[0].classList.add("openNav");
+      document.getElementsByClassName("nav")[0].classList.remove("closeNav");
+  })
 </script>
 
-<nav class="nav">
+<nav class="nav animate__animated animate__backInDown ">
   <p id="btnCerrar" class="nav__icon"><i class="fa-solid fa-x"></i></p>
   <div
     class="hidden md:flex space-x-4 contenedor animate__animated animate__bounce"
@@ -71,6 +84,6 @@ const navItems = [
   </div>
 </nav>
 <nav class="navSecundario" >
-  <p>{titulo}</p>
-  <p id="openModal" ><i class="fa-brands fa-slack"></i></p>
+  <p class="multicolor-text" > {titulo}</p>
+  <p id="openModal"><i class="fa-brands fa-slack  "></i></p>
 </nav>  

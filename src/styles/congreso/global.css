@@ -1,6 +1,7 @@
 :root{
   --color-texto:aliceblue;
   --color-acoplado:rgb(182, 57, 89);
+  --color-selva:#3dad2e;
 }
 *{
   margin: 0;
