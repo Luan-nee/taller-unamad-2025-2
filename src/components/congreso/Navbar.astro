@@ -1,0 +1,50 @@
+---
+import "congreso:styles/navbar.css"
+
+const navItems = [
+  { href: "/congreso", label: "Home" , icono:"fa-solid fa-house" , config:"text-green-500 text-2xl" },
+  { href: "/posts", label: "Posts" ,icono:"fa-solid fa-house" },
+  { href: "/about", label: "About", icono:"fa-solid fa-house" },
+];
+---  
+
+<script>
+    const linkClasses = {
+      active: [
+        "text-mint-500",
+        "dark:text-mint-400",
+        "font-bold",
+        "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
+      ],
+      inactive: ["dark:text-zinc-300", "text-blacktext"],
+    };
+    function toggleLinkClasses(link: Element, isActive: boolean) {
+      if (isActive) {
+        link.classList.add(...linkClasses.active);
+        link.classList.remove(...linkClasses.inactive);
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove(...linkClasses.active);
+        link.classList.add(...linkClasses.inactive);
+        link.removeAttribute("aria-current");
+      }
+    }
+</script>
+
+<nav class="nav">
+  <div class="hidden md:flex space-x-4 contenedor ">
+    {navItems.map(item => {
+        return(
+
+            <a href={item.href} class="nav_item">
+            <i class={`${item.icono}  nav__icon  ${item.config} ` }  ></i>
+            <span class="nav__label" >{item.label}</span>
+            <span>|</span>
+            </a>   
+        )
+    })}
+  </div>
+</nav>
+
+    
+
