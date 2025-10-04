@@ -1,13 +1,39 @@
 ---
-import {Layout} from "congreso:layouts"
-import { Titulo } from "congreso:componentes"
+import { Layout } from "congreso:layouts";
+import { Titulo, Datos } from "congreso:componentes";
+import type { contenedorEnlaces } from "congreso:types";
+
+const datosPrueba = [
+  {
+    titulo: "clase 1",
+    descripcion: "esto es una descripcion",
+    complementos: [
+      {
+        nombre: "prueba",
+        icono: "fa-solid fa-calendar-days",
+        enlace: "#",
+      },
+    ],
+  },
+  {
+    titulo: "clase 2",
+    descripcion: "esto es una descripcion 2",
+    complementos: [
+      {
+        nombre: "prueba",
+        icono: "fa-solid fa-calendar-days",
+        enlace: "#",
+      },
+    ],
+  },
+];
 ---
 
 <Layout>
-
-    <Titulo titulo="Esto es una prueba" subtitulo="Welcome unamad"  descripcion="Esto s un ejemplar"  />
-
+  <Titulo
+    titulo="Esto es una prueba"
+    subtitulo="Welcome unamad"
+    descripcion="Esto s un ejemplar"
+  />
+  <Datos titulo="Prueba de datos" descripcion="Esta es una descripcion" elementos={datosPrueba} />
 </Layout>
-
-
-

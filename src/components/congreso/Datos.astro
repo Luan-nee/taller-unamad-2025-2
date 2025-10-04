@@ -1,0 +1,30 @@
+---
+import { CardData } from "congreso:ui";
+import "congreso:styles/datos.css";
+import type { contenedorEnlaces } from "congreso:types";
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  elementos?: Array<contenedorEnlaces>;
+}
+
+const { titulo, descripcion, elementos } = Astro.props;
+---
+
+<div class="contenedorDatosPrincipal animate__animated animate__zoomIn">
+  <h2 class="tituloPrincipalDatos">{titulo}</h2>
+  <p class="descripcionPrincipalDatos">{descripcion}</p>
+
+  <div class="contenedorPrincipalDatos">
+    {
+      elementos?.map((elemento) => (
+        <CardData
+          titulo={elemento.titulo}
+          descripcion={elemento.descripcion}
+          complementos={elemento.complementos}
+        />
+      ))
+    }
+  </div>
+</div>

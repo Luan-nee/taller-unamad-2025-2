@@ -1,0 +1,32 @@
+---
+import type { Enlaces } from 'congreso:types';
+import "congreso:styles/cardData.css"
+
+
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  complementos: Array<Enlaces>;
+}
+
+const { titulo = "", descripcion, complementos } = Astro.props;
+
+---
+
+<div class="cardData">
+  <h2>{titulo}</h2>
+  <p>{descripcion}</p>
+  <div class="cajaEnlaces">
+    {
+      complementos.map((dato) => {
+        return(
+          <div class="cajaEnlace">
+            <i class={` caja_icono ${dato.icono}`} />
+            <a href={dato.enlace}>{dato.nombre}</a>
+          </div>
+        )
+      })
+    }
+  </div>
+</div>
