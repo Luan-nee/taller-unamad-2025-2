@@ -2,10 +2,10 @@
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Desarrollo de Software'
 pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
+description: 'Potencia tus habilidades y prepárate para el futuro del desarrollo de software! Este taller está diseñado para sumergirte en las prácticas más actuales y demandadas de la industria. Aprenderás a construir soluciones robustas y eficientes, trabajando como un profesional.'
 languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
 image:
-  url: "/images/projects/neonmint.webp"
+  url: "/images/projects/poster-taller-2.png"
   alt: "Thumbnail of Astro arches."
 --- 
 

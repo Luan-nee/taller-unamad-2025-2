@@ -2,10 +2,10 @@
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Ciencia de Datos'
 pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
+description: 'Aprende estadística, Machine Learning supervisado y herramientas clave como Python, Jupyter, pandas y matplotlib. Explora la ética y privacidad en el análisis de datos para convertirte en un experto en Ciencia de Datos.'
 languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
 image:
-  url: "/images/projects/neonmint.webp"
+  url: "/images/projects/poster-taller-3.png"
   alt: "Thumbnail of Astro arches."
 --- 
 

@@ -2,10 +2,10 @@
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Redes y Telemática'
 pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
+description: 'Domina el diseño, administración y seguridad de redes. Explora tecnologías emergentes y aprende a simular y analizar redes para convertirte en un experto en Telemática.'
 languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
 image:
-  url: "/images/projects/neonmint.webp"
+  url: "/images/projects/poster-taller-4.png"
   alt: "Thumbnail of Astro arches."
 --- 
 

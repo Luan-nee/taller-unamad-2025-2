@@ -2,11 +2,11 @@
 layout:  /src/layouts/ProjectLayout.astro
 title: ' Internet de las Cosas (loT) y Redes y Telecomunicaciones'
 pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
+description: 'Explora la Arquitectura y protocolos (MQIT, CoAP) de IOT, componentes hardware (Arduino, Raspberry Pi), Fundamentos de redes (radsalmíndas (Wi-Fi, LoRaWAN, 5G, Bluetooth) y Seguridiad aplicada a IOT y redes.'
 languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
 image:
-  url: "/images/projects/neonmint.webp"
-  alt: "Thumbnail of Astro arches."
+  url: "/images/projects/poster-taller-1.png"
+  alt: "Arquitectura y protocolos"
 --- 
 
 **NeonMint** is a modern, minimalist web template created for developers, designers, and digital creatives. This project aims to offer an elegant and functional visual experience, combining a dark-toned aesthetic with mint green accents to highlight content without distractions.
