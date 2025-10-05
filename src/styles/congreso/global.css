@@ -26,5 +26,6 @@ body{
   #main{
     flex-direction: column;
     width: 95%; 
+    align-items: center;
   } 
 }

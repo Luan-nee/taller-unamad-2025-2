@@ -18,3 +18,10 @@
 .contenedorPrincipalDatos{
     width: 100%;
 }
+
+@media (max-width: 640px) {
+    .contenedorDatosPrincipal{
+        width: 85%;
+
+    }
+}
