@@ -1,7 +1,11 @@
 ---
 import { Layout } from "congreso:layouts";
 import { Titulo, Datos,FotoWallpaper } from "congreso:componentes";
+import { getEntry } from "astro:content";
 
+const datos = await getEntry("pages","principal");
+
+if(!datos) throw new Error("No se encontro el archibo");
 
 const datosPrueba = [
   {
@@ -31,9 +35,9 @@ const datosPrueba = [
 
 <Layout>
   <Titulo
-    titulo="Esto es una prueba"
-    subtitulo="Welcome unamad"
-    descripcion="Esto s un ejemplar"
+    titulo={datos.data.titulo}
+    subtitulo={datos.data.subtitulo}
+    descripcion={datos.data.descripcion}
   />
   <Datos titulo="Prueba de datos" descripcion="Esta es una descripcion" elementos={datosPrueba} />
   <FotoWallpaper dirImage="/congreso/logoUnamad.png"/>
