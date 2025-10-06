@@ -1,13 +1,44 @@
 ---
-import {Layout} from "congreso:layouts"
-import { Titulo } from "congreso:componentes"
+import { Layout } from "congreso:layouts";
+import { Titulo, Datos,FotoWallpaper } from "congreso:componentes";
+import { getEntry } from "astro:content";
+
+const datos = await getEntry("pages","principal");
+
+if(!datos) throw new Error("No se encontro el archibo");
+
+const datosPrueba = [
+  {
+    titulo: "clase 1",
+    descripcion: "esto es una descripcion",
+    complementos: [
+      {
+        nombre: "prueba",
+        icono: "fa-solid fa-calendar-days",
+        enlace: "#",
+      },
+    ],
+  },
+  {
+    titulo: "clase 2",
+    descripcion: "esto es una descripcion 2",
+    complementos: [
+      {
+        nombre: "prueba",
+        icono: "fa-solid fa-calendar-days",
+        enlace: "#",
+      },
+    ],
+  },
+];
 ---
 
 <Layout>
-
-    <Titulo titulo="Esto es una prueba" subtitulo="Welcome unamad"  descripcion="Esto s un ejemplar"  />
-
+  <Titulo
+    titulo={datos.data.titulo}
+    subtitulo={datos.data.subtitulo}
+    descripcion={datos.data.descripcion}
+  />
+  <Datos titulo="Prueba de datos" descripcion="Esta es una descripcion" elementos={datosPrueba} />
+  <FotoWallpaper dirImage="/congreso/logoUnamad.png"/>
 </Layout>
-
-
-

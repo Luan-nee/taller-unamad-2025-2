@@ -38,6 +38,18 @@ const jsonDataCollection = defineCollection({
   }),
 });
 
+
+
+const jsonDataCongresoPage = defineCollection({
+  type:'content',
+  schema:z.object({
+    titulo:z.string(),
+    subtitulo:z.string(),
+    descripcion:z.string()
+  })
+})
+
 export const collections = {
   staticData: jsonDataCollection,
+  pages:jsonDataCongresoPage
 };

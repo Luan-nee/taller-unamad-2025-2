@@ -23,6 +23,16 @@
   cursor: pointer;
 }
 
+#openModal{
+  cursor: pointer;
+  transition: all 1s ease;
+  font-size: 20px;
+}
+#openModal:hover{
+  transform:scale(1.2) rotate(90deg);
+  color: #3dad2e;
+}
+
 .contenedor{
     display: flex;
     flex-direction: column;
@@ -86,15 +96,28 @@
 }
 
 .closeNav{
-  display: none;
+  display: none !important;
 }
 
 .openNav{
-  display: flex;
+  display: flex !important ;
 }
 
 .navSecundario{
   display: none;
+}
+
+.multicolor-text {
+  font-size: 20px; 
+  font-weight: bold;
+
+  background: linear-gradient(to right, #3dad2e,var(--color-acoplado)  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
 }
 
 @media (max-width: 640px) {
@@ -114,8 +137,9 @@
     position: sticky;
     top: 0;
     justify-content: space-between;
-    border-bottom: 1px solid var(--color-acoplado);
+    border-bottom: 3px solid var(--color-acoplado);
     color: #000;
+    backdrop-filter: blur(5px);
   }
   .nav{
     width: 100%;
@@ -125,7 +149,6 @@
     margin: 0;
     left: 0;
     padding: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.671);

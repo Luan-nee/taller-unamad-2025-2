@@ -1,35 +1,110 @@
 ---
-import  "congreso:styles/titulo.css"
-import "animate.css"
+import "congreso:styles/titulo.css";
+import "animate.css";
 
-interface Props{
-    titulo:string,
-    subtitulo:string,
-    descripcion:string | null,
-    opciones?:Array<{"nombre":string,"direccion":string}>
+interface Props {
+  titulo: string;
+  subtitulo: string;
+  descripcion: string | null;
+  opciones?: Array<{ nombre: string; direccion: string }>;
 }
 
-const {titulo="ejemplo1", subtitulo="none" ,descripcion="esto es un ejemplo",opciones=[{"nombre":"escuela","direccion":"#pagina"}] } = Astro.props;
-
-
+const {
+  titulo = "ejemplo1",
+  subtitulo = "none",
+  descripcion = "esto es un ejemplo",
+  opciones = [{ nombre: "escuela", direccion: "#pagina" }],
+} = Astro.props;
 ---
 
+<script>
+  const canvas = document.getElementById("estrellas");
+  const ctx = canvas.getContext("2d");
 
-<div class="tituloContent ">
-    <div class="contenedorTitulo">
-        <div class="contenedorTitle" >
-            <p class="tituloMaster" > { titulo } </p>
-            <p class="descripcion">{subtitulo}  </p>
-        </div>
-        <div>
-            <p> {descripcion} </p>
-            { opciones?.map(opcion=>{
-                return(
-                    <div>
-                        <a href={opcion.direccion} > {opcion.nombre}</a>
-                    </div>
-                )
-            })}
-        </div>
+  let fugaces = [];
+  const numFugaces = 3;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  function crearFugaces() {
+    fugaces = [];
+    for (let i = 0; i < numFugaces; i++) {
+      fugaces.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * -canvas.height,
+        length: Math.random() * 100 + 100,
+        speed: Math.random() * 10 + 7,
+        opacity: Math.random() * 0.5 + 0.5,
+      });
+    }
+  }
+
+  function dibujar() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    for (let f of fugaces) {
+      const grad = ctx.createLinearGradient(
+        f.x,
+        f.y,
+        f.x - f.length,
+        f.y - f.length / 3
+      );
+      grad.addColorStop(1, `rgba(255,255,255,${f.opacity})`);
+      grad.addColorStop(0, "rgb(182, 57, 89)");
+
+      ctx.beginPath();
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 2;
+      ctx.moveTo(f.x, f.y);
+      ctx.lineTo(f.x - f.length, f.y - f.length / 3);
+      ctx.stroke();
+
+      f.x += f.speed;
+      f.y += f.speed / 3;
+
+      if (f.x > canvas.width + 200 || f.y > canvas.height + 200) {
+        f.x = Math.random() * -200;
+        f.y = Math.random() * -200;
+        f.length = Math.random() * 100 + 100;
+        f.speed = Math.random() * 10 + 2;
+      }
+    }
+
+    requestAnimationFrame(dibujar);
+  }
+
+  crearFugaces();
+  dibujar();
+</script>
+
+<div class="tituloContent">
+  <div class="contenedorTitulo">
+    <div class="contenedorTitle">
+      <p class="tituloMaster">{titulo}</p>
+      <p class="descripcion">{subtitulo}</p>
     </div>
+    <div class="contenedorOpc">
+      <p>{descripcion}</p>
+      {
+        opciones?.map((opcion) => {
+          return (
+            <div class="opcionTitulo">
+              <span class="lineaOpcion">|</span>
+              <a href={opcion.direccion}> {opcion.nombre}</a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <canvas id="estrellas"></canvas>
 </div>

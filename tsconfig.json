@@ -14,7 +14,12 @@
     "paths": {
       "congreso:componentes":["src/components/congreso/index.ts"],
       "congreso:layouts":["src/layouts/congreso/index.ts"],
-      "congreso:styles/*":["src/styles/congreso/*"]
+      "congreso:ui": [
+        "src/components/ui/congreso/index.ts"
+      ],
+      "congreso:styles/*":["src/styles/congreso/*"],
+      "congreso:types":["src/components/types/congreso.ts"]
+
     }
 
   }

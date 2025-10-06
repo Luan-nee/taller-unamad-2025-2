@@ -1,0 +1,16 @@
+---
+import "congreso:styles/fotoWallpaper.css"
+
+interface Props{
+    dirImage:string
+}
+
+
+const { dirImage } = Astro.props;
+---
+
+
+
+<div class="imageWallpaper" >
+    <img src={dirImage} alt="">
+</div>
