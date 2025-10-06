@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: ' Internet de las Cosas (loT) y Redes y Telecomunicaciones'
+title: ' IOT, Redes y Telecomunicaciones'
 pubDate: 2025-04-05
 description: 'Explora la Arquitectura y protocolos (MQIT, CoAP) de IOT, componentes hardware (Arduino, Raspberry Pi), Fundamentos de redes (radsalmíndas (Wi-Fi, LoRaWAN, 5G, Bluetooth) y Seguridiad aplicada a IOT y redes.'
 languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
