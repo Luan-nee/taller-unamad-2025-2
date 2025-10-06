@@ -1,7 +1,7 @@
 ---
 import { Layout } from "congreso:layouts";
-import { Titulo, Datos } from "congreso:componentes";
-import type { contenedorEnlaces } from "congreso:types";
+import { Titulo, Datos,FotoWallpaper } from "congreso:componentes";
+
 
 const datosPrueba = [
   {
@@ -36,4 +36,5 @@ const datosPrueba = [
     descripcion="Esto s un ejemplar"
   />
   <Datos titulo="Prueba de datos" descripcion="Esta es una descripcion" elementos={datosPrueba} />
+  <FotoWallpaper dirImage="/congreso/logoUnamad.png"/>
 </Layout>

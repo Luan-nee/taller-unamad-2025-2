@@ -20,6 +20,7 @@ const { titulo, descripcion, elementos } = Astro.props;
     {
       elementos?.map((elemento) => (
         <CardData
+          id={elemento.id}
           titulo={elemento.titulo}
           descripcion={elemento.descripcion}
           complementos={elemento.complementos}

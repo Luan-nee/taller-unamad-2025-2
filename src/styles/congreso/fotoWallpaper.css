@@ -1,0 +1,15 @@
+.imageWallpaper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 90%;
+    z-index: 0;
+}
+
+.imageWallpaper img {
+    width: 90%;
+    height: auto;
+    opacity: 0.25;
+    transition: all 0.5s ease;
+}

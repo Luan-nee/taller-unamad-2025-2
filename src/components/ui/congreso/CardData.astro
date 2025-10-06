@@ -5,17 +5,18 @@ import "congreso:styles/cardData.css"
 
 
 interface Props {
+  id?:string,
   titulo: string;
   descripcion: string;
   complementos: Array<Enlaces>;
 }
 
-const { titulo = "", descripcion, complementos } = Astro.props;
+const { id,titulo = "", descripcion, complementos } = Astro.props;
 
 ---
 
-<div class="cardData">
-  <h2>{titulo}</h2>
+<div id={id} class="cardData">
+  <a href="#" class="cardTitulo" >{titulo}</a>
   <p>{descripcion}</p>
   <div class="cajaEnlaces">
     {
