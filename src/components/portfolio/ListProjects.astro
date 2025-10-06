@@ -20,31 +20,20 @@ allPosts.sort(
   <div class="mx-auto max-w-7xl py-8">
     <div class="flex gap-4 items-center justify-center text-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="code" />
-      <Heading text="Projects" textGradient="Completed" level={2} />
+      <Heading text="" textGradient="Talleres" level={2} />
     </div>
 
     <p
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
     >
-      I love <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >turning ideas into real projects.</b
-      >
-      <br /> Here I show you some of the <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >developments</b
-      > I've worked on, applying technology, design, and lots of creativity.
-      <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >Check them out!</b
-      >
+      Explora los talleres especializados que hemos puesto a tu disposición, una inversión directa en tu futuro profesional.
     </p>
     <slot />
   </div>
 
   <div
     id="containerProjects"
-    class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
+    class="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-1 py-4 transition-[max-height] duration-500 ease-in-out"
   >
     {
       allPosts.map((post) => (
