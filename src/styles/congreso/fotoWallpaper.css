@@ -5,6 +5,7 @@
     width: 50%;
     height: 90%;
     z-index: 0;
+    overflow:hidden;
 }
 
 .imageWallpaper img {
