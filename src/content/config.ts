@@ -45,9 +45,25 @@ const jsonDataCongresoPage = defineCollection({
   schema:z.object({
     titulo:z.string(),
     subtitulo:z.string(),
-    descripcion:z.string()
-  })
-})
+    descripcion:z.string(),
+    titulo2:z.string(),
+    descripcion2:z.string(),
+    datosComplemento: z.array(
+      z.object({
+        id:z.string().optional(),
+        titulo: z.string(),
+        descripcion: z.string(),
+        complementos: z.array(
+          z.object({
+            nombre: z.string(),
+            icono: z.string(),
+            enlace: z.string(),
+          })
+        ),
+      })
+    ).optional(),
+  }),
+});
 
 export const collections = {
   staticData: jsonDataCollection,
