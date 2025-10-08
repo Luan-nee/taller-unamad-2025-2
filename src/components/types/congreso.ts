@@ -9,5 +9,6 @@ export interface contenedorEnlaces{
     id?:string,
     titulo:string,
     descripcion:string,
-    complementos:Array<Enlaces>
+    complementos:Array<Enlaces>,
+    imagen?:string
 }

@@ -60,6 +60,7 @@ const jsonDataCongresoPage = defineCollection({
             enlace: z.string(),
           })
         ),
+        imagen:z.string(),
       })
     ).optional(),
   }),

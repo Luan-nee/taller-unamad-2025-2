@@ -2,11 +2,11 @@
 import "congreso:styles/navbar.css";
 import "animate.css";
 
-interface Props{
-  titulo:string
+interface Props {
+  titulo: string;
 }
 
-const {titulo = "UNAMAD"} = Astro.props;
+const { titulo = "UNAMAD" } = Astro.props;
 
 const navItems = [
   {
@@ -15,10 +15,21 @@ const navItems = [
     icono: "fa-solid fa-house",
     config: "text-green-500 text-2xl",
   },
-  { href: "/posts", label: "Posts", icono: "fa-solid fa-house" },
-  { href: "/about", label: "Inscripcion estudiante", icono: "fa-brands fa-jenkins"
-   },
-
+  {
+    href: "/posts",
+    label: "Inscripcion Bachillers",
+    icono: "fa-solid fa-graduation-cap",
+  },
+  {
+    href: "/about",
+    label: "Inscripcion estudiante",
+    icono: "fa-brands fa-jenkins",
+  },
+  {
+    href: "/about",
+    label: "Inscripcion Libre",
+    icono: "fa-solid fa-user-secret",
+  },
 ];
 ---
 
@@ -33,7 +44,7 @@ const navItems = [
     inactive: ["dark:text-zinc-300", "text-blacktext"],
   };
 
-  function cerrarNav(){
+  function cerrarNav() {
     const caja = document.getElementsByClassName("nav")[0];
     caja.classList.add("animate__bounceOut");
     setTimeout(() => {
@@ -59,15 +70,15 @@ const navItems = [
   const boton = document.getElementById("btnCerrar");
   const botonOpen = document.getElementById("openModal");
 
-  boton?.addEventListener("click",cerrarNav)
-  botonOpen?.addEventListener("click",()=>{
-      document.body.style.overflow = "hidden";
-      document.getElementsByClassName("nav")[0].classList.add("openNav");
-      document.getElementsByClassName("nav")[0].classList.remove("closeNav");
-  })
+  boton?.addEventListener("click", cerrarNav);
+  botonOpen?.addEventListener("click", () => {
+    document.body.style.overflow = "hidden";
+    document.getElementsByClassName("nav")[0].classList.add("openNav");
+    document.getElementsByClassName("nav")[0].classList.remove("closeNav");
+  });
 </script>
 
-<nav class="nav animate__animated animate__backInDown ">
+<nav class="nav animate__animated animate__backInDown">
   <p id="btnCerrar" class="nav__icon"><i class="fa-solid fa-x"></i></p>
   <div
     class="hidden md:flex space-x-4 contenedor animate__animated animate__bounce"
@@ -78,16 +89,16 @@ const navItems = [
           <a href={item.href} class="nav_item ">
             <i class={`${item.icono}  nav__icon  ${item.config} `} />
             <span class="nav__label">
-                  <ul>{item.label}</ul>
+              <ul>{item.label}</ul>
             </span>
-            <span class="nav__icon" >|</span>
+            <span class="nav__icon">|</span>
           </a>
         );
       })
     }
   </div>
 </nav>
-<nav class="navSecundario" >
-  <p class="multicolor-text" > {titulo}</p>
-  <p id="openModal"><i class="fa-brands fa-slack  "></i></p>
-</nav>  
+<nav class="navSecundario">
+  <p class="multicolor-text">{titulo}</p>
+  <p id="openModal"><i class="fa-brands fa-slack"></i></p>
+</nav>

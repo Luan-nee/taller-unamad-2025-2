@@ -1,0 +1,52 @@
+---
+layout: "../../layouts/congreso/Template.astro"
+titulo: "Programación de Módulos de Entrenamiento PLC"
+subtitulo: "Curso avanzado de control industrial y automatización"
+imagenReferencia: "/congreso/logoUnamad.png"
+descripcion: "Domina las aplicaciones prácticas del control automatizado. Aprende a configurar, programar y optimizar módulos PLC en entornos industriales, elevando tus competencias en ingeniería y automatización."
+titulo2: "Temario"
+
+opciones:
+  - nombre: "Programas de Control"
+    direccion: "#programasControl"
+  - nombre: "Ejercicios Prácticos"
+    direccion: "#ejerciciosPracticos"
+
+datosComplemento: 
+  - id: "programasControl"
+    titulo: "Programas de Aplicación Práctica"
+  - descripcion: "Control de flujo de proceso"
+  - descripcion: "Medición y control de presión"
+  - descripcion: "Control de señal de semáforo"
+  - descripcion: "Automatización de lavado industrial"
+  - descripcion: "Medición y control de nivel de líquido"
+  - descripcion: "Medición y control de temperatura"
+  - descripcion: "Control de nivel de proceso"
+  - complementos:
+      - nombre: ""
+        icono: "fa-brands fa-whatsapp"
+        enlace: "#"
+      - nombre: ""
+        icono: "fa-solid fa-share-nodes"
+        enlace: "#"
+      - nombre: ""
+        icono: "fa-regular fa-face-laugh-beam"
+        enlace: "#"
+
+  - id: "ejerciciosPracticos"
+    titulo: "Aplicaciones Industriales y Laboratorio"
+  - descripcion: "Desarrollo de rutinas prácticas con PLC en entornos simulados"
+  - descripcion: "Pruebas de control secuencial y temporización"
+  - descripcion: "Integración de sensores y actuadores en proyectos industriales"
+  - descripcion: "Evaluación de desempeño en sistemas automatizados"
+  - complementos:
+      - nombre: ""
+        icono: "fa-brands fa-whatsapp"
+        enlace: "#"
+      - nombre: ""
+        icono: "fa-solid fa-share-nodes"
+        enlace: "#"
+      - nombre: ""
+        icono: "fa-regular fa-face-laugh-beam"
+        enlace: "#"
+---

@@ -3,31 +3,7 @@ import { Layout } from "congreso:layouts";
 import { Titulo, Datos, FotoWallpaper } from "congreso:componentes";
 
 const { frontmatter } = Astro.props;
-console.log(Astro.props);
-const datosPrueba = [
-  {
-    titulo: "clase 1",
-    descripcion: "esto es una descripcion",
-    complementos: [
-      {
-        nombre: "prueba",
-        icono: "fa-solid fa-calendar-days",
-        enlace: "#",
-      },
-    ],
-  },
-  {
-    titulo: "clase 2",
-    descripcion: "esto es una descripcion 2",
-    complementos: [
-      {
-        nombre: "prueba",
-        icono: "fa-solid fa-calendar-days",
-        enlace: "#",
-      },
-    ],
-  },
-];
+
 ---
 
 <Layout>
@@ -35,11 +11,12 @@ const datosPrueba = [
     titulo={frontmatter.titulo}
     subtitulo={frontmatter.subtitulo}
     descripcion={frontmatter.descripcion}
+    opciones={frontmatter.opciones}
   />
   <Datos
-    titulo="Prueba de datos2"
-    descripcion="Esta es una descripcion"
-    elementos={datosPrueba}
+    titulo={frontmatter.titulo2}
+    descripcion={frontmatter.descripcion2}
+    elementos={frontmatter.datosComplemento}
   />
-  <FotoWallpaper dirImage="/congreso/logoUnamad.png" />
+  <FotoWallpaper dirImage={frontmatter.imagenReferencia} />
 </Layout>

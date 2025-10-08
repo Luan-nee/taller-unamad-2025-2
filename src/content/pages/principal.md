@@ -7,6 +7,7 @@ descripcion2: "La Universidad Nacional Amazonica de Madre de Dios presenta el cu
 
 datosComplemento: 
     - titulo: "Fundamentos de Automatizaciòn y PLC"
+      imagen: "/public/congreso/plc.gif"
       descripcion: "Descubre cómo la automatización transforma la industria moderna: aprende los fundamentos del control industrial y la programación de PLC, pilares esenciales de la Industria 4.0. ¡Da el siguiente paso hacia el futuro tecnológico!"
       complementos:
             - nombre: "13-10-2025"
@@ -17,6 +18,7 @@ datosComplemento:
               enlace: "#"
 
     - titulo: "Programacion Basica de PLC" 
+      imagen: "/public/congreso/plc_programing.png"
       descripcion: "Domina la lógica detrás de la automatización industrial aprendiendo programación básica de PLC. Comprende cómo las máquinas “piensan” y da tus primeros pasos hacia el control inteligente de procesos."
       complementos:
         - nombre: "13-10-2025"
@@ -27,6 +29,7 @@ datosComplemento:
           enlace: "#"
 
     - titulo: "Modulos de Entrenamiento de PLC" 
+      imagen: "/public/congreso/modulosPlc.png"
       descripcion: "Aprende a programar módulos de entrenamiento de PLC y lleva la teoría a la práctica. Domina la configuración, simulación y control de procesos reales en entornos de automatización industrial."
       complementos:
         - nombre: "14-10-2025"
@@ -37,6 +40,7 @@ datosComplemento:
           enlace: "#"
     
     - titulo: "Diseño de circuitos Impresos" 
+      imagen: "/public/congreso/arquitecturaPlc.png"
       descripcion: "Descubre cómo dar vida a tus proyectos electrónicos mediante el diseño de circuitos impresos (PCB). Aprende a transformar tus ideas en placas funcionales listas para la automatización y la innovación tecnológica."
       complementos:
         - nombre: "14-10-2025"

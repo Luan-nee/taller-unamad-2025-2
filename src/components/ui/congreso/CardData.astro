@@ -1,17 +1,19 @@
 ---
 import type { Enlaces } from 'congreso:types';
 import "congreso:styles/cardData.css"
+import { undefined } from 'astro:schema';
 
 
 
 interface Props {
   id?:string,
-  titulo: string;
-  descripcion: string;
-  complementos: Array<Enlaces>;
+  titulo?: string;
+  descripcion?: string;
+  complementos?: Array<Enlaces>;
+  imagen?:string
 }
 
-const { id,titulo = "", descripcion, complementos } = Astro.props;
+const { id,titulo, descripcion, complementos,imagen } = Astro.props;
 
 ---
 
@@ -21,7 +23,7 @@ const { id,titulo = "", descripcion, complementos } = Astro.props;
     <p>{descripcion}</p>
     <div class="cajaEnlaces">
       {
-        complementos.map((dato) => {
+        complementos?.map((dato) => {
           return(
             <div class="cajaEnlace">
               <i class={` caja_icono ${dato.icono}`} />
@@ -32,7 +34,9 @@ const { id,titulo = "", descripcion, complementos } = Astro.props;
       }
     </div>
   </div>
-  <div class="cardContentImg" >
-    <img class="cardImg" src="/public/congreso/plc.gif" alt="">
-  </div>
+  { imagen ? ( 
+     <div class="cardContentImg" >
+       <img class="cardImg" src={imagen} alt="">
+     </div>
+    ) : "" }
 </div>
