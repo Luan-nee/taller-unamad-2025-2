@@ -1,31 +1,43 @@
 :root{
-  --color-texto:aliceblue;
+  --color-texto:rgb(255, 255, 255);
   --color-acoplado:rgb(182, 57, 89);
   --color-acoplado-degrado:rgba(187, 66, 96, 0.685);
   --color-selva:#3dad2e;
+  --color-fondo:#fff;
 }
+
+@media (prefers-color-scheme: dark){
+  :root {
+      --color-texto: rgba(255, 255, 255, 0.829);
+      --color-acoplado: rgb(212, 68, 123);
+      --color-acoplado-degrado: rgba(187, 66, 96, 0.685);
+      --color-selva: #3dad2e;
+      --color-fondo:#1c1e26 ;
+    }
+}
+
 *{
   margin: 0;
   padding: 0;
 }
 body{
-    background: aliceblue;
+    background: var(--color-fondo);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-texto);
 }
 
 #main{
-  max-width: 1200px;
-  width: 90%;
+  max-width: 1400px;
   display: flex;
   flex-direction: row;
 }
 @media (max-width: 640px){
   #main{
     flex-direction: column;
-    width: 95%; 
+    width: 100%; 
     align-items: center;
   } 
 }

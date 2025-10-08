@@ -65,7 +65,7 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateX(6px);
-  background-color: aliceblue;
+  background-color: var(--color-fondo) ;
   transition:
     max-width .42s ease,
     opacity .42s ease,
@@ -127,7 +127,7 @@
 
 @media (max-width: 640px) {
   .nav__label {
-    max-width: 160px;
+    max-width: 260px;
     opacity: 1;
     transform: translateX(0);
   }
@@ -161,5 +161,10 @@
     background-color: rgba(255, 255, 255, 0.671);
     backdrop-filter: blur(5px);
     display: none;
+  }
+
+  .contenedor{
+    display: flex;
+    align-items: center;
   }
 }

@@ -6,7 +6,6 @@
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s ease;
-    padding: 15px;
     gap: 10px;
     flex-direction: row;
 }
@@ -45,6 +44,7 @@
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
+    margin: 5px 0;
 }
 
 .cardData .cardTitulo::after {
@@ -90,6 +90,7 @@
 .cardDataContenido1{
     display: flex;
     flex-direction: column;
+    margin: 10px 0;
 }
 
 .cardContentImg{
@@ -102,4 +103,20 @@
 .cardContentImg .cardImg{
     width: 160px;
 
+}
+
+@media (max-width:670px){
+    .cardData{
+        flex-direction: column;
+    }
+
+    .cardContentImg{
+        height: 250px;
+        justify-content: center;
+    }
+    .cardContentImg .cardImg{
+        width: auto;
+        background-size: cover;
+        opacity: 0.9;
+    }
 }

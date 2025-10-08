@@ -2,11 +2,13 @@
     width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: first baseline;
     overflow-y: scroll;
     z-index: 5;
     gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 90vh;
 }
 
 .tituloPrincipalDatos {
@@ -24,5 +26,8 @@
 @media (max-width: 640px) {
     .contenedorDatosPrincipal {
         width: 85%;
+        height: auto;
+        overflow: auto;
     }
+
 }
