@@ -15,3 +15,10 @@
     transition: all 0.5s ease;
     filter: blur(2px);
 }
+
+@media (max-width: 640px) {
+    .imageWallpaper{
+        width: 90%;
+        position: fixed;
+    }
+}

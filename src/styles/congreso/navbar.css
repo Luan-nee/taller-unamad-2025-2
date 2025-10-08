@@ -59,12 +59,13 @@
 }
 
 .nav__label {
-  display: inline-block;
+  display: flex;
   max-width: 0;         
   overflow: hidden;
   white-space: nowrap;
   opacity: 0;
   transform: translateX(6px);
+  background-color: aliceblue;
   transition:
     max-width .42s ease,
     opacity .42s ease,
@@ -74,6 +75,10 @@
     background-color .45s ease;
   font-size: 0.95rem;
   border-radius: 5px;
+  flex-wrap: wrap;
+  white-space: normal;
+  text-align: center;
+  padding: 2px;
 }
 
 .nav_item:hover .nav__label,
@@ -140,12 +145,14 @@
     border-bottom: 3px solid var(--color-acoplado);
     color: #000;
     backdrop-filter: blur(5px);
+    z-index: 15;
   }
   .nav{
     width: 100%;
     height: 100vh;
     gap: 0;
     top:0;
+    position: sticky;
     margin: 0;
     left: 0;
     padding: 0;

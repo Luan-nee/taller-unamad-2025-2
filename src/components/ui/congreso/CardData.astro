@@ -16,18 +16,23 @@ const { id,titulo = "", descripcion, complementos } = Astro.props;
 ---
 
 <div id={id} class="cardData">
-  <a href="#" class="cardTitulo" >{titulo}</a>
-  <p>{descripcion}</p>
-  <div class="cajaEnlaces">
-    {
-      complementos.map((dato) => {
-        return(
-          <div class="cajaEnlace">
-            <i class={` caja_icono ${dato.icono}`} />
-            <a href={dato.enlace}>{dato.nombre}</a>
-          </div>
-        )
-      })
-    }
+  <div class="cardDataContenido1" >
+    <a href="#" class="cardTitulo" >{titulo}</a>
+    <p>{descripcion}</p>
+    <div class="cajaEnlaces">
+      {
+        complementos.map((dato) => {
+          return(
+            <div class="cajaEnlace">
+              <i class={` caja_icono ${dato.icono}`} />
+              <a href={dato.enlace}>{dato.nombre}</a>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+  <div class="cardContentImg" >
+    <img class="cardImg" src="/public/congreso/plc.gif" alt="">
   </div>
 </div>

@@ -16,7 +16,9 @@ const navItems = [
     config: "text-green-500 text-2xl",
   },
   { href: "/posts", label: "Posts", icono: "fa-solid fa-house" },
-  { href: "/about", label: "About", icono: "fa-solid fa-house" },
+  { href: "/about", label: "Inscripcion estudiante", icono: "fa-brands fa-jenkins"
+   },
+
 ];
 ---
 
@@ -75,7 +77,9 @@ const navItems = [
         return (
           <a href={item.href} class="nav_item ">
             <i class={`${item.icono}  nav__icon  ${item.config} `} />
-            <span class="nav__label">{item.label}</span>
+            <span class="nav__label">
+                  <ul>{item.label}</ul>
+            </span>
             <span class="nav__icon" >|</span>
           </a>
         );
