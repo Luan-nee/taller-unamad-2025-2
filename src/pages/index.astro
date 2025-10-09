@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/portfolio/Experience.astro";
 import HeroIndex from "../components/portfolio/HeroIndex.astro";
+import PresentCarrera from "src/components/inicio/PresentCarrera.astro";
+import Eventos from "src/components/inicio/Eventos.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ListProjects from "../components/portfolio/ListProjects.astro";
 import { getCollection } from "astro:content";
@@ -15,6 +17,9 @@ const { pageTitle, pageDescription, OGImage } = staticData.data;
   description={pageDescription}
   ogimage={{ alt: OGImage.alt, url: OGImage.url }}
 >
+
+  <PresentCarrera />
+  <Eventos />
   <HeroIndex />
   <Experience />
   <ListProjects />

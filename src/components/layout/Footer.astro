@@ -1,82 +1,115 @@
 ---
-import Social from "../ui/Social.astro";
-import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
-const {
-  github,
-  alias,
-  instagram,
-  email,
-  youtube,
-  linkedin,
-  emailIconName,
-  youtubeIconName,
-  linkedinIconName,
-  instagramIconName,
-  githubIconName,
-} = staticData.data;
 ---
 
 <footer
-  class="relative bottom-0 w-full px-4 py-2 font-medium text-blacktext dark:bg-transparent dark:border-b-2 dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
-  role="contentinfo"
-  aria-label="Site footer"
+  class="bg-gradient-to-br from-purple-900 to-violet-800 text-white py-12 mt-20"
 >
-  <nav
-    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
-    aria-label="Footer navigation"
-  >
-    <div class="text-center">
-      <a
-        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
-        aria-label="About the website development"
-        ><Icon name="code" aria-hidden="true"/> Developed by <strong
-          >{alias}</strong
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            alt="UNAMAD Logo"
+            class="h-16 w-auto"
+            src="https://customer-assets.emergentagent.com/job_peru-tech-events/artifacts/hlrujwsj_LogoUnamad.png"
+          /><div>
+            <h3 class="font-bold text-xl">UNAMAD</h3><p
+              class="text-sm text-purple-200"
+            >
+              Universidad Nacional Amazónica de Madre de Dios
+            </p>
+          </div>
+        </div><p class="text-sm text-purple-100">
+          Escuela Profesional de Ingeniería de Sistemas e Informática
+        </p>
+      </div><div>
+        <h4 class="font-bold text-lg mb-4">Contacto</h4><div
+          class="space-y-3 text-sm text-purple-100"
         >
-        </a
-      >
-    </div>
-    <div
-      class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]"
+          <div class="flex items-start gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-map-pin h-5 w-5 flex-shrink-0 mt-0.5"
+              aria-hidden="true"
+              ><path
+                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+              ></path><circle cx="12" cy="10" r="3"></circle></svg
+            ><span>Puerto Maldonado, Madre de Dios, Perú</span>
+          </div><div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-phone h-5 w-5 flex-shrink-0"
+              aria-hidden="true"
+              ><path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path></svg
+            ><span>+51 (082) 571522</span>
+          </div><div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-mail h-5 w-5 flex-shrink-0"
+              aria-hidden="true"
+              ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect
+                x="2"
+                y="4"
+                width="20"
+                height="16"
+                rx="2"></rect></svg
+            ><span>sistemas@unamad.edu.pe</span>
+          </div>
+        </div>
+      </div><div>
+        <h4 class="font-bold text-lg mb-4">Enlaces</h4><ul
+          class="space-y-2 text-sm text-purple-100"
+        >
+          <li>
+            <a
+              href="https://www.unamad.edu.pe"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-white transition-colors"
+              >UNAMAD - Sitio Oficial</a>
+          </li><li>
+            <a href="#" class="hover:text-white transition-colors"
+              >Facultad de Ingeniería</a>
+          </li><li>
+            <a href="#" class="hover:text-white transition-colors"
+              >Escuela de Sistemas</a>
+          </li>
+        </ul>
+      </div>
+    </div><div
+      class="border-t border-purple-700 mt-8 pt-8 text-center text-sm text-purple-200"
     >
-      <a href="/" aria-label="Return to homepage">
-        <h2 class="text-2xl font-bold italic">
-          <u>Volver al inicio</u>
-        </h2>
-      </a>
+      <p>
+        © 2025 Universidad Nacional Amazónica de Madre de Dios. Todos los
+        derechos reservados.
+      </p>
     </div>
-    <!-- <div
-      class="flex items-center justify-center gap-5"
-      role="group"
-      aria-label="Social media links"
-    >
-      <Social
-        link={`mailto:${email}`}
-        iconName={emailIconName}
-        label={`Send email to ${email}`}
-      />
-      <Social
-        link={instagram}
-        iconName={instagramIconName}
-        label={`Visit ${alias} on Instagram`}
-      />
-      <Social
-        link={youtube}
-        iconName={youtubeIconName}
-        label={`Visit ${alias} on YouTube`}
-      />
-      <Social
-        link={github}
-        iconName={githubIconName}
-        label={`Visit ${alias} on GitHub`}
-      />
-      <Social
-        link={linkedin}
-        iconName={linkedinIconName}
-        label={`Visit ${alias} on LinkedIn`}
-      />
-    </div> -->
-  </nav>
+  </div>
 </footer>
