@@ -1,8 +1,9 @@
 ---
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import BurguerBtn from "../ui/BurguerBtn.astro";
+
 const informacion = {
-  inicio: { name: "Inicio", path: "/#home" },
+  inicio: { name: "Inicio", path: "/#inicio" },
   eventos: { name: "Eventos", path: "/#eventos" },
   patrocinadores: { name: "Patrocinadores", path: "/#patrocinadores" },
   universidad: {
@@ -59,6 +60,11 @@ const informacion = {
         >
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
+          href={informacion.eventos.path}
+          data-discover="true">{informacion.eventos.name}</a
+        >
+        <a
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
           href={informacion.patrocinadores.path}
           data-discover="true">{informacion.patrocinadores.name}</a
         >
@@ -71,4 +77,3 @@ const informacion = {
     </div>
   </div>
 </header>
-<div class="w-full h-20"></div>
