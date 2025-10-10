@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CardPonente from "../../components/ponentes/cardPonente.astro";
+
+
+const ponentes = [
+    {
+      nombre: "Diodomiro Baldomero Luque Carcasi",
+      tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
+      universidad: "UFAC",
+      foto: "/ponentes/LuqueCarcasi.png",
+    },
+    {
+      nombre: "Diodomiro Baldomero Luque Carcasi",
+      tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
+      universidad: "UFAC",
+      foto: "/ponentes/LuqueCarcasi.png",
+    },
+  ]
+
+---
+
+<div class="w-full h-25"></div>
+<Layout pageTitle="Ponente - Dr. Diodomiro Luque Carcasi" description="Ponente destacado">
+
+  <CardPonente {...ponentes[0]} />
+  <CardPonente {...ponentes[1]} />
+</Layout>

@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "./header.astro";
+import CardPonente from "../../components/ponentes/cardPonente.astro";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const { pageTitle, pageDescription, OGImage } = staticData.data;
+
+const ponentes = [
+  {
+    nombre: "Diodomiro Baldomero Luque Carcasi",
+    tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
+    universidad: "UFAC",
+    foto: "/ponentes/LuqueCarcasi.png",
+  },
+  {
+    nombre: "Diodomiro Baldomero Luque Carcasi",
+    tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
+    universidad: "UFAC",
+    foto: "/ponentes/LuqueCarcasi.png",
+  },
+];
+---
+
+<div class="w-full h-20"></div>
+
+<Layout
+  pageTitle={pageTitle}
+  description={pageDescription}
+  ogimage={{ alt: OGImage.alt, url: OGImage.url }}
+>
+  <Header />
+
+  <div class="flex flex-col items-center justify-center text-center pt-8 pb-2">
+    <h1 class="text-4xl md:text-6xl font-bold text-purple-900 dark:text-purple-400 mb-6">
+        Ponentes
+      </h1>
+  </div>
+
+  <section class="flex md:flex-row flex-col wrap gap-6 justify-center items-center mb-20">
+    {
+      ponentes.map((ponente) => (
+        <CardPonente {...ponente} />
+      ))
+    }
+  </section>
+  <!-- <HeroIndex /> -->
+  <!-- <Experience /> -->
+  <!-- <ListProjects /> -->
+</Layout>
