@@ -60,7 +60,7 @@ const dialogId = `dialog-${nombre.replace(/\s/g, '-')}`;
 
 <dialog 
   id={dialogId}
-  class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 rounded-2xl max-h-[50vh] p-0 border-0" 
+  class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 rounded-2xl max-h-[90vh] p-0 border-0" 
   aria-label={`Biografía de ${nombre}`}
 >
   <div class="bg-white/95 dark:bg-gray-900/95 text-left text-black dark:text-white w-[min(90vw,600px)]">
@@ -72,7 +72,7 @@ const dialogId = `dialog-${nombre.replace(/\s/g, '-')}`;
       <button data-close class="close-bio text-sm text-gray-600 dark:text-gray-300 hover:text-red-500" aria-label="Cerrar biografía">✕</button>
     </div>
 
-    <div class="p-4 text-sm leading-relaxed overflow-y-auto h-full max-h-[calc(40vh-100px)]">
+    <div class="p-4 text-sm leading-relaxed overflow-y-auto max-h-[calc(90vh-140px)]">
       <p>{biografia}</p>
     </div>
 

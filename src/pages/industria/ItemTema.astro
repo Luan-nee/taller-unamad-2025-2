@@ -1,0 +1,154 @@
+---
+
+interface Props {
+  id: number;
+  titulo: string;
+  hora: string;
+  subtemas: Array<{
+    titulo: string;
+    temas: string[];
+  }>;
+}
+
+const {id, titulo, hora, subtemas } = Astro.props;
+
+---
+
+<div data-state="open" data-orientation="vertical" class="border-b" data-item-id={`${id}`}>
+  <h3 data-orientation="vertical" data-state="open" class="flex">
+    <button
+      type="button"
+      aria-controls={`subtemas-content-${id}`}
+      aria-expanded="false"
+      data-state="closed"
+      data-orientation="vertical"
+      id={`item-btn-${id}`}
+      class="flex flex-1 items-center justify-between py-4 text-sm font-medium hover:underline [&[data-state=open]>svg]:rotate-180 text-left hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+      data-radix-collection-item=""
+      data-item-button
+      ><div>
+        <p class="font-bold text-gray-900 dark:text-white">
+          {titulo}
+        </p><p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+          {hora}
+        </p>
+      </div><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-down h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
+        aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg
+      ></button
+    >
+  </h3>
+  
+  <div
+    id={`subtemas-content-${id}`}
+    class="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    data-item-content
+    style="max-height: 0; overflow: hidden; transition: max-height 260ms ease-in-out;"
+  >
+    <div class="mb-4">
+      {subtemas.map((subtema) => (
+        <div class="mb-2">
+          <p class="ml-8 text-gray-400 text-2xl dark:text-white">
+            {subtema.titulo}
+          </p>
+          <ul class="space-y-2 mt-2 ml-12">
+            {subtema.temas.map((tema) => (
+              <li class="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                <span class="text-purple-600 dark:text-purple-400 mt-1">•</span><span>{tema}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  // Toggle script for ItemTema instances.
+  // Works with many sessions on the same page. Uses data-item-button and data-item-content attributes
+  // to avoid id collisions. When one panel opens, others are collapsed.
+  (function () {
+    function setMaxHeight(el: any, expand: any) {
+      if (!el) return;
+      if (expand) {
+        el.style.display = 'block';
+        const height = el.scrollHeight;
+        el.style.maxHeight = '0px';
+        requestAnimationFrame(() => {
+          el.style.transition = 'max-height 260ms ease-in-out';
+          el.style.maxHeight = height + 'px';
+        });
+        setTimeout(() => {
+          // clear so it can adapt to content changes
+          el.style.maxHeight = 'none';
+        }, 300);
+      } else {
+        const currentHeight = el.scrollHeight;
+        el.style.maxHeight = currentHeight + 'px';
+        requestAnimationFrame(() => {
+          el.style.transition = 'max-height 260ms ease-in-out';
+          el.style.maxHeight = '0px';
+        });
+        setTimeout(() => {
+          el.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // initialize all instances
+      const buttons = Array.from(document.querySelectorAll('[data-item-button]'));
+      buttons.forEach((btn) => {
+        const controls = btn.getAttribute('aria-controls');
+        if (!controls) return;
+        const content = document.getElementById(controls);
+
+        // start collapsed
+        if (content) {
+          content.style.display = 'none';
+          content.style.maxHeight = '0px';
+        }
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (!content) return;
+
+          const isCollapsed = content.style.display === 'none' || content.style.maxHeight === '0px';
+
+          // collapse other panels
+          document.querySelectorAll('[data-item-content]').forEach((other) => {
+            if (other === content) return;
+            setMaxHeight(other, false);
+            const otherId = other.id;
+            const otherBtn = document.querySelector(`[aria-controls="${otherId}"]`);
+            if (otherBtn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              const svgOther = otherBtn.querySelector('svg');
+              if (svgOther) svgOther.style.transform = 'rotate(0deg)';
+            }
+          });
+
+          setMaxHeight(content, isCollapsed);
+          btn.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
+
+          const svg = btn.querySelector('svg');
+          if (svg) {
+            svg.style.transition = 'transform 0.2s ease';
+            svg.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  })();
+</script>

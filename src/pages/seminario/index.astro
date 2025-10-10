@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Patrocinadores from "src/components/inicio/Patrocinadores.astro";
 import Header from "./header.astro";
 import CardPonente from "../../components/ponentes/cardPonente.astro";
 import { getCollection } from "astro:content";
@@ -13,12 +14,7 @@ const ponentes = [
     tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
     universidad: "UFAC",
     foto: "/ponentes/LuqueCarcasi.png",
-  },
-  {
-    nombre: "Diodomiro Baldomero Luque Carcasi",
-    tema: "Módulo Educacional de Internet das Coisas - IoT para aplicações na Amazônia",
-    universidad: "UFAC",
-    foto: "/ponentes/LuqueCarcasi.png",
+    biografia: 'El Doctor Diodomiro Baldomero Luque Carcasi, es especialista en las áreas de proyecto electromagnético de máquinas con imán permanente, Electrónica de Potencia, Energías Renovables e Inteligencia Artificial. Es autor de inúmeros trabajos científicos publicados en revistas y conferencias; es revisor de trabajos científicos en las áreas de Máquinas Eléctricas Rotativas, Electrónica de Potencia y Energías Renovables. Ha actuado en diversos proyectos de desarrollo tecnológico "R&D" junto a la Universidad de Padua, UNIPID, Italia. Realizó un Post-Doctorado en la "Universidad Federal do ABC" donde desarrolló actividades científicas orientadas a las redes inteligentes "Smart Grids". Actualmente es profesor associado de la "Universidad Federal del Acre, UFAC", es miembro titular del programa de posgrado en Ciencias de la Computación, PGCC, del programa de posgrado en Ingeniería Eléctrica, PPGEE y fue asesor principal de la Comisión de Ciencia, Innovación y Tecnología del Congreso de la República del Perú.',
   },
 ];
 ---
@@ -38,13 +34,16 @@ const ponentes = [
       </h1>
   </div>
 
-  <section class="flex md:flex-row flex-col wrap gap-6 justify-center items-center mb-20">
+  <section class="flex flex-wrap md:flex-row flex-col gap-6 justify-center items-center mb-20 mx-8 relative">
     {
       ponentes.map((ponente) => (
         <CardPonente {...ponente} />
       ))
     }
+
   </section>
+
+  <!-- <Patrocinadores /> -->
   <!-- <HeroIndex /> -->
   <!-- <Experience /> -->
   <!-- <ListProjects /> -->
