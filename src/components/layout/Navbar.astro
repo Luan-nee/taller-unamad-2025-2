@@ -1,95 +1,72 @@
 ---
-
+import ThemeIcon from "../ui/ThemeIcon.astro";
+import BurguerBtn from "../ui/BurguerBtn.astro";
+const informacion = {
+  inicio: { name: "Inicio", path: "/#home" },
+  eventos: { name: "Eventos", path: "/#eventos" },
+  patrocinadores: { name: "Patrocinadores", path: "/#patrocinadores" },
+  universidad: {
+    siglas: "UNAMAD",
+    nombre: "Universidad de Madre de Dios",
+    logo: "/logo/LogoUnamad.png",
+    path: "/#home",
+  },
+};
 ---
 
 <header
   class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors"
 >
-  <div class="container mx-auto px-4 py-4">
+  <div class="container mx-auto relative px-4 py-4">
     <div class="flex items-center justify-between">
       <a
         class="flex items-center gap-3 hover:opacity-80 transition-opacity"
-        href="/"
+        href={informacion.universidad.path}
         data-discover="true"
-        ><img
+      >
+        <img
           alt="UNAMAD Logo"
           class="h-12 w-auto"
-          src="https://customer-assets.emergentagent.com/job_peru-tech-events/artifacts/hlrujwsj_LogoUnamad.png"
-        /><div class="hidden md:block">
+          src={informacion.universidad.logo}
+        />
+        <div class="hidden md:block">
           <h1 class="text-lg font-bold text-purple-700 dark:text-purple-400">
-            UNAMAD
+            {informacion.universidad.siglas}
           </h1><p class="text-xs text-gray-600 dark:text-gray-400">
-            Ingeniería de Sistemas
+            {informacion.universidad.nombre}
           </p>
         </div></a
-      ><nav class="hidden md:flex items-center gap-6">
+      >
+
+      <div id="BurguerNav" class="md:hidden pt-4 pb-4 flex flex-col gap-4 absolute top-full w-screen left-0 bg-white dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800 transition-colors px-4 hidden">
         <a
           class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
-          href="/"
-          data-discover="true">Inicio</a
-        ><button
+          href={informacion.inicio.path}
+          data-discover="true">{informacion.inicio.name}</a
+        >
+        <a
           class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
-          >Patrocinadores</button
-        ><button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-2"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-sun h-5 w-5"
-            aria-hidden="true"
-            ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-            ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-            ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
-            ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
-            ></path><path d="m19.07 4.93-1.41 1.41"></path></svg
-          ></button
+          href={informacion.patrocinadores.path}
+          data-discover="true">{informacion.patrocinadores.name}</a
         >
-      </nav><div class="flex md:hidden items-center gap-2">
-        <button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-sun h-5 w-5"
-            aria-hidden="true"
-            ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-            ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-            ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
-            ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
-            ></path><path d="m19.07 4.93-1.41 1.41"></path></svg
-          ></button
-        ><button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-menu h-6 w-6"
-            aria-hidden="true"
-            ><path d="M4 12h16"></path><path d="M4 18h16"></path><path
-              d="M4 6h16"></path></svg
-          ></button
+      </div>
+
+      <nav class="hidden mr-[15rem] md:flex items-center gap-6">
+        <a
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
+          href={informacion.inicio.path}
+          data-discover="true">{informacion.inicio.name}</a
         >
+        <a
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition-colors font-medium"
+          href={informacion.patrocinadores.path}
+          data-discover="true">{informacion.patrocinadores.name}</a
+        >
+      </nav>
+
+      <div>
+        <BurguerBtn />
+        <ThemeIcon />
       </div>
     </div>
   </div>

@@ -1,0 +1,40 @@
+<script>
+  let isMenuOpen = false;
+  let btnBurguer = document.querySelector("#btnBurguer");
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    const nav = document.querySelector("#BurguerNav");
+    if (nav) {
+      if (isMenuOpen) {
+        nav.classList.remove("hidden");
+      } else {
+        nav.classList.add("hidden");
+      }
+    }
+  }
+
+  btnBurguer?.addEventListener("click", toggleMenu);
+</script>
+
+<button
+  id="btnBurguer"
+  class="md:hidden dark:text-white cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-menu h-6 w-6"
+    aria-hidden="true"
+  >
+    <path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"
+    ></path></svg
+  >
+</button>
