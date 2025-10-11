@@ -1,29 +1,25 @@
 ---
 import "../styles/global.css";
-import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import Navbar from "../components/layout/Navbar.astro";
-import  SpeedInsights  from "@vercel/speed-insights/astro"
 const {
-  pageTitle = "NeonMint by EFEELE 🚀",
-  description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
+  pageTitle = "UNAMAD",
+  description = "Bienvenidos a uno de los eventos académicos organizador por la carrera de Sistemas.",
   ogimage = {
     url: "/images/imagedefault.webp",
-    alt: "Default image of EFEELE",
+    alt: "Default image of UNAMAD",
   },
 } = Astro.props;
 
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "NeonMint by EFEELE🚀",
+  sitename: "",
   url: siteUrl,
   locale: "en_US",
-  author: "Fernando Lopez | EFEELE",
-  twitter: "@efeeledev",
+  author: "Talleres",
+  twitter: "@UNAMAD",
 };
 
-
-const twitterimage = `${siteUrl}${ogimage.url}`;
 ---
 
 <html
@@ -36,17 +32,13 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <title>{pageTitle}</title>
     <!-- Favicon for different platforms -->
     <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
+    <!-- <link rel="icon" href="/favicon-16x16.png" sizes="16x16" /> -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" />
     <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
 
     <!-- Web manifest -->
     <link rel="manifest" href="/site.webmanifest" />
-
-    <meta name="description" content={description} />
-    <meta name="author" content={SEO.author} />
-    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={pageTitle} />
@@ -59,14 +51,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta property="og:locale" content={SEO.locale} />
     
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={twitterimage} />
-    <meta name="twitter:image:alt" content={ogimage.alt} />
-    <meta name="twitter:site" content={SEO.twitter} />
-  
     <meta name="theme-color" content="#0E0E11"/>
 
     <!-- Sitemap -->
