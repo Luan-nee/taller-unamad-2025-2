@@ -1,5 +1,6 @@
 ---
 import "../../styles/global.css";
+import Patrocinadores from "../../components/inicio/Patrocinadores.astro";
 import Layout from "../../layouts/Layout.astro";
 import Header from "./header.astro";
 import Informacion from "./informacion.astro";
@@ -17,4 +18,5 @@ const { pageTitle, pageDescription, OGImage } = staticData.data;
     <div class="w-full h-15"></div>
     <Header />
     <Informacion />
+    <Patrocinadores />
 </Layout>
