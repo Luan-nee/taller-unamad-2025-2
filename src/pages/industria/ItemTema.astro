@@ -10,7 +10,7 @@ interface Props {
   }>;
 }
 
-const {id, titulo, hora, subtemas } = Astro.props;
+const {id, titulo, hora, subtemas = [] } = Astro.props;
 
 ---
 
@@ -55,7 +55,8 @@ const {id, titulo, hora, subtemas } = Astro.props;
     style="max-height: 0; overflow: hidden; transition: max-height 260ms ease-in-out;"
   >
     <div class="mb-4">
-      {subtemas.map((subtema) => (
+      {
+        subtemas.map((subtema) => (
         <div class="mb-2">
           <p class="ml-8 text-gray-400 text-2xl dark:text-white">
             {subtema.titulo}
