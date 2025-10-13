@@ -4,13 +4,14 @@ interface Props {
   id: number;
   titulo: string;
   hora: string;
+  ubicacion: string;
   subtemas: Array<{
     titulo: string;
     temas: string[];
   }>;
 }
 
-const {id, titulo, hora, subtemas = [] } = Astro.props;
+const {id, titulo, hora, ubicacion, subtemas = [] } = Astro.props;
 
 ---
 
@@ -31,6 +32,9 @@ const {id, titulo, hora, subtemas = [] } = Astro.props;
           {titulo}
         </p><p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
           {hora}
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+          {ubicacion}
         </p>
       </div><svg
         xmlns="http://www.w3.org/2000/svg"

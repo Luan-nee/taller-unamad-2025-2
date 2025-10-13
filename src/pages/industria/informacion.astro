@@ -4,7 +4,8 @@ import ItemTema from "./ItemTema.astro"
 const sesiones = [
   {
     titulo: "Sesión 1: Fundamentos de Automatización y PLC",
-    hora: "8:00 am a 1:00 pm",
+    hora: "13 octubre - 9:00 am a 1:00 pm",
+    ubicacion: "Laboratorio de informática",
     subtemas: [
       {
         titulo: "Introducción a la automatización industrial",
@@ -28,7 +29,8 @@ const sesiones = [
   },
   {
     titulo: "Sesión 2: Programación básica de PLC",
-    hora: "8:00 am a 1:00 pm",
+    hora: "13 de octubre - 3:00 pm a 6:00 pm",
+    ubicacion: "",
     subtemas: [
       {
         titulo: "Programación Ladder",
@@ -44,7 +46,8 @@ const sesiones = [
   },
   {
     titulo: "SESIÓN 3: Programación de módulos de entrenamiento PLC",
-    hora: "2:00 pm a 7:00 pm", 
+    hora: "14 de octubre - 9:00 pm a 1:00 pm",
+    ubicacion: "Laboratorio de informática",
     subtemas: [
       {
         titulo: "Programas de aplicación práctica",
@@ -62,7 +65,8 @@ const sesiones = [
   },
   {
     titulo: "SESIÓN 4: Diseño de circuitos impresos (PCB)",
-    hora: "8:00 am a 1:00 pm", 
+    hora: "14 de octubre - 3:00 pm a 6:00 pm",
+    ubicacion: "Laboratorio de informática",
     subtemas: [
       {
         titulo: "Diseño de PCB con KiCAD",
@@ -117,7 +121,7 @@ const sesiones = [
             <div class="w-full">
               {
                 sesiones.map((sesion, index) => (
-                  <ItemTema id={index} titulo={sesion.titulo} hora={sesion.hora} subtemas={sesion.subtemas} />
+                  <ItemTema id={index} titulo={sesion.titulo} ubicacion={sesion.ubicacion} hora={sesion.hora} subtemas={sesion.subtemas} />
                 ))
               }
             </div>
