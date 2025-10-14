@@ -8,9 +8,10 @@ interface Props {
   universidad: string;
   foto: string;
   biografia: string;
+  bandera: string;
 }
 
-const { nombre, universidad, tema, foto, biografia } = Astro.props;
+const { nombre, universidad, tema, foto, biografia, bandera } = Astro.props;
 
 // Usaremos un ID único basado en el nombre para evitar conflictos si hay varias tarjetas
 const dialogId = `dialog-${nombre.replace(/\s/g, '-')}`;
@@ -24,8 +25,11 @@ const dialogId = `dialog-${nombre.replace(/\s/g, '-')}`;
 >
   {/* Bandera y universidad */}
   <div class="flex justify-between items-center p-2">
+    <div class="d-flex h-6 border-1 border-purple-600 overflow-hidden">
+      <img src={bandera} alt={`bandera del país del ${nombre}`} class="object-cover w-full h-full" />
+    </div>
     <span class="text-xs bg-purple-400 px-2 py-1 rounded-md ml-auto text-white">
-      <!-- {universidad} -->
+      {universidad}
     </span>
   </div>
 
