@@ -1,0 +1,113 @@
+---
+// scheduleData.js - (For demonstration, you'd likely fetch this)
+import CronogramaResponsive from "./CronogramaResponsive.astro";
+import TableCronograma from "./TableCronograma.astro";
+
+const data =
+  [
+    {
+      ponente: "Dr. ALDO ALARCON SUCASACA",
+      tema: "AMENAZAS EN REDES SOCIALES: CAPTURA DE CREDENCIALES",
+      hora: "9:00 AM - 9:30 AM",
+      dia: "15 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. MIGUEL VALLES CORAL",
+      tema: "ESTIMACIÓN NO INVASIVA DEL PESO EN GANADO VACUNO MEDIANTE MODELOS HÍBRIDOS DE SEGMENTACIÓN DE IMÁGENES Y REGRESIÓN",
+      hora: "9:30 AM - 10:00 AM",
+      dia: "15 DE OCTUBRE",
+    },
+    {
+      ponente: "M.Sc. JORGE GUERRA GUERRA",
+      tema: "DESARROLLO DE APLICACIONES USANDO IA GENERATIVA",
+      hora: "10:00 AM - 12:00 M",
+      dia: "15 DE OCTUBRE",
+    },
+    {
+      ponente: "Mtro. JAFFET SILLO SOSA",
+      tema: "ENTRE EL ACCESO Y LA DESCONEXIÓN: EVALUACIÓN DE LA GESTIÓN TECNOLÓGICA Y SOSTENIBILIDAD OPERATIVA DE LAS TABLETAS EDUCATIVAS EN MADRE DE DIOS DURANTE 2024 Y 2025",
+      hora: "12:00 M - 12:30 M",
+      dia: "15 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. LUIS ALBERTO HOLGADO APAZA",
+      tema: "MODELO DE APRENDIZAJE PROFUNDO PARA LA ESTIMACIÓN CUANTITATIVA DE CONCENTRACIÓN DE PROPANO A PARTIR DE IMÁGENES TÉRMICAS",
+      hora: "12:30 M - 1:30 PM",
+      dia: "15 DE OCTUBRE",
+    },
+    {
+      ponente: "Dra. ANA BEATRIZ ALVAREZ MAMANI",
+      tema: "A VISÃO E INTELIGÊNCIA COMPUTACIONAL COMO FATOR PROMOTOR DA TRANSFORMAÇÃO DIGITAL",
+      hora: "9:00 AM - 9:30 AM",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "M.Sc. JAIME CESAR PRIETO LUNA",
+      tema: "TRANSMISIÓN DE DATOS DE SENSORES IOT MEDIANTE LORAWAN: DESARROLLO EXPERIMENTAL CON HARDWARE DE ENTRENAMIENTO ACADÉMICO",
+      hora: "9:30 AM - 10:00 AM",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. VICTOR ANDRES AYMA QUIRITA",
+      tema: "APLICACIONES DE IA EN REMOTE SENSING",
+      hora: "10:00 AM - 10:30 AM",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. DIODOMIRO BALDOMERO LUQUE CARCASI",
+      tema: "MÓDULO EDUCACIONAL DE INTERNET DAS COISAS PARA APLICACÕES NA AMAZÔNIA",
+      hora: "10:30 AM - 11:00 AM",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. YALMAR TEMISTOCLES PONCE ATENCIO",
+      tema: "INTELIGENCIA ARTIFICIAL EN SECTORES ESTRATÉGICOS: SALUD, EDUCACIÓN, MINERÍA Y SEGURIDAD",
+      hora: "11:00 AM - 11:30 AM",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. LUIS SANDOVAL ACOSTA",
+      tema: "MODELO DE DETECCIÓN DE INTRUSIONES PARA UNIDADES DE CONTROL ELECTRÓNICO DE VEHÍCULOS AUTÓNOMOS BASADO EN CNN-LSTM",
+      hora: "11:30 AM - 12:00 M",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "Dr. DENYS ALBERTO JARAMILLO PERALTA",
+      tema: "AMENAZAS EMERGENTES EN IA GENERATIVA: ANÁLISIS DE MODELOS DE LENGUAJE DISEÑADOS PARA ELUDIR SALVAGUARDAS ÉTICAS",
+      hora: "12:00 M - 12:30 M",
+      dia: "16 DE OCTUBRE",
+    },
+    {
+      ponente: "M.Sc. JORGE GUERRA GUERRA",
+      tema: "EL PRESENTE DE LA IA GENERATIVA EN LA INVESTIGACIÓN Y DESARROLLO",
+      hora: "2:00 PM - 3:00 PM",
+      dia: "16 DE OCTUBRE",
+    },
+  ];
+
+---
+
+<div
+  id="cronograma"
+  class="p-4 sm:p-8 min-h-screen
+            bg-gray-50 dark:bg-gray-900
+            transition duration-500"
+>
+  <h1
+    class="text-4xl font-extrabold mt-8 mb-4 text-center
+             text-purple-800 dark:text-purple-400"
+  >
+    <span class="block">Cronograma del Evento</span>
+    <span
+      class="text-xl font-medium
+                  text-purple-600 dark:text-purple-500"
+      >15 y 16 de Octubre</span
+    >
+  </h1>
+
+
+  <TableCronograma schedule={data} />
+
+  <CronogramaResponsive schedule={data} />
+
+</div>
